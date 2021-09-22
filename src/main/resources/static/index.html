@@ -4,15 +4,29 @@
   <title>LAB04/BCC/FACOM/UFU ‐ Index</title>
 </head>
 <body>
-  <formaction="/lab4/add" method="GET" id="nameForm">
+  <form action="/lab4/add" method="GET" id="nameForm">
   <div>
-    <labelfor="nameField">InputUserData</label>
+    <label for="nameField">InputUserData</label>
     </br>
-    <inputname="name" id="nameField">
+    <input name="name" id="nameField">
     </br>
-    <inputname="email" id="emailField">
+    <input name="email" id="emailField">
     <button>AddUser</button>
   </div>
+  </form>
+
+  <form action="/lab4/addSubject" method="GET" id="subjectForm">
+    <div>
+      <label for="subjectName">Subject name field</label>
+      <br>
+      <input name="name" id="subjectName">
+      <br>
+      <input name="description" id="subjectDescription">
+      <br>
+      <input name="hoursPerWeek" id="subjectHoursPerWeek">
+      <br>
+      <button>Add Subject</button>
+    </div>
   </form>
 </body>
 </html>
