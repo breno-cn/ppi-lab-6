@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <h2>Add User With Validation</h2>
+    <form action="#" th:action="@{/lab4/addValidSubject}" th:object="${subject}" method="get">
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td><input type="text" th:field="*{name}" /></td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td><input type="text" th:field="*{description}" /></td>
+            </tr>
+            <tr>
+                <td>Hours Per week</td>
+                <td><input type="text" th:field="*{hoursPerWeek}" ></td>
+                <td th:if="${#fields.hasErrors('hoursPerWeek')}" th:errors="*{hoursPerWeek}">Hours Per Week Error</td>
+            </tr>
+            <tr>
+                <td>Starting Date</td>
+                <td><input type="text" th:field="*{startingDate}" ></td>
+                <td th:if="${#fields.hasErrors('startingDate')}" th:errors="*{Starting Date}">Starting Date Error</td>
+            </tr>
+            <tr>
+                <td>Subject Code:</td>
+                <td><input type="text" th:field="*{subjectCode}" /></td>
+            </tr>
+            <tr>
+                <td><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
