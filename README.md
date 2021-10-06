@@ -1,15 +1,18 @@
-# Laboratório 4 - Programação Para Internet
+# Laboratório 6 - Programação Para Internet
 
-## 9 - O que acontece caso o atributo “action” do formulário por alterado para action="/add"? 
-Com essa mudança, torna-se acessível um formulário para preencher as informaçõeso de um novo usuário. Porém, o endpoint de adicionar o mesmo encontra-se com erro.
+## Curl utilizados, gerados a partir do Postman
 
-## 13 - Realize o teste deste novo formulário e anote o resultado obtidos.
-Ocorre um comportamento semelhanto ao item 9. O Formulário para preencher as informações de subject está disponível, porém a chamada do método ainda continua com erro, por não estar chamando o endpoint correto.
+### GET all
+curl --location --request GET 'http://localhost:8080/api/post'
 
-## 14 - Altere o formulário HTML criado no passo 6. No elemento <form> indique que o método que deve ser invocado é: action="/lab4/addDomainObject".
-Alterando os endpoints dos formulários para "/lab4/addUser" e "/lab4/addSubject", temos o comportamento esperado. Agora, o formulário está realizando a ação correta, chamando os endpoints mapeados pela classe LabController em /lab4.
+### GET by id
+curl --location --request GET 'http://localhost:8080/api/post/1'
 
-# Laboratório 5 - Programação Para Internet
+### POST
+curl --location --request POST 'http://localhost:8080/api/post' --header 'Content-Type: application/json' --data-raw '{"title": "new title", "content": "new content"}'
 
-## Mudanças
-Foi adicionado validação para subject, seguindo as devidas instruções.
+### DELETE
+curl --location --request DELETE 'http://localhost:8080/api/post/3'
+
+### PUT
+curl --location --request PUT 'http://localhost:8080/api/post/3' --header 'Content-Type: application/json' --data-raw '{"title": "updated title", "content": "updated content"}'
